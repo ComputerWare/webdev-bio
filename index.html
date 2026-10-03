@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evan Sergi | Full-Stack & Backend Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#a855f7',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            dark: '#090d16'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 3px;
+        }
+
+        .glass-card {
+            background: rgba(15, 21, 36, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-nav {
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glow-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.28;
+            pointer-events: none;
+            animation: floatGlow 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-25px, 25px) scale(1.08); }
+        }
+
+        .glow-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-hover:hover {
+            transform: translateY(-3px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#090d16] text-slate-100 font-sans antialiased min-h-screen selection:bg-cyan-500 selection:text-white relative overflow-x-hidden flex flex-col justify-between">
+
+    <!-- Ambient glowing backgrounds -->
+    <div class="glow-blob w-[400px] h-[400px] bg-purple-600 top-[-80px] left-[-80px]"></div>
+    <div class="glow-blob w-[450px] h-[450px] bg-cyan-600 bottom-[10%] right-[-100px]"></div>
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 font-bold text-base text-white group">
+                <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 flex items-center justify-center font-extrabold text-xs text-white shadow-md shadow-purple-500/20 group-hover:scale-105 transition-transform">
+                    ES
+                </div>
+                <span>Evan <span class="text-cyan-400">Sergi</span></span>
+            </a>
+
+            <div class="flex items-center gap-2">
+                <button onclick="copyDiscordHandle()" class="px-3 py-1.5 rounded-lg glass-card text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 transition-all flex items-center gap-1.5">
+                    <i class="fa-brands fa-discord text-indigo-400"></i>
+                    <span id="nav-discord-label">evansergi</span>
+                </button>
+                <a href="#contact" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold text-xs shadow-md shadow-cyan-500/10 hover:opacity-90 transition-all">
+                    Connect
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20 pb-12 max-w-4xl mx-auto px-4 sm:px-6 space-y-8 w-full">
+
+        <!-- Hero Section -->
+        <section class="space-y-4 pt-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs font-semibold text-cyan-300 border border-cyan-500/30">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Available for Contract & Freelance Work</span>
+            </div>
+
+            <div class="space-y-2">
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                    Evan Sergi
+                </h1>
+                <p class="text-lg sm:text-xl font-semibold bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                    Full-Stack & Backend Developer
+                </p>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-xl leading-relaxed">
+                    3+ years crafting responsive glassmorphism web applications, automated backend scripts, REST APIs, and high-performance Minecraft plugins.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 pt-1">
+                <button onclick="copyDiscordHandle()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold shadow-lg shadow-purple-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-discord text-sm"></i>
+                    <span id="hero-discord-label">Discord: evansergi</span>
+                </button>
+                <a href="#projects" class="px-4 py-2 rounded-xl glass-card text-slate-200 hover:text-white text-xs font-bold border border-slate-700/60 transition-all">
+                    Explore Projects <i class="fa-solid fa-arrow-down ms-1 text-[10px]"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-2xl p-4 space-y-2.5 border border-slate-800">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xs uppercase tracking-wider font-bold text-slate-400">Technical Skills</h2>
+                <span class="text-[10px] text-cyan-400 font-mono">Modern Tech Stack</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5 text-xs font-mono font-medium">
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-brands fa-python text-yellow-400 me-1.5"></i>Python</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-brands fa-node-js text-green-400 me-1.5"></i>Node.js</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-brands fa-js text-yellow-300 me-1.5"></i>JavaScript</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-brands fa-java text-orange-400 me-1.5"></i>Kotlin / Java</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-solid fa-server text-purple-400 me-1.5"></i>Express</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-solid fa-bolt text-emerald-400 me-1.5"></i>Supabase</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-solid fa-database text-green-500 me-1.5"></i>MongoDB</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-solid fa-database text-cyan-400 me-1.5"></i>PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300"><i class="fa-brands fa-html5 text-orange-500 me-1.5"></i>HTML5/CSS3</span>
+            </div>
+        </section>
+
+        <section id="projects" class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 font-bold">Featured Projects</h2>
+                
+                <!-- Category Filter Buttons -->
+                <div id="filter-container" class="flex gap-1 bg-slate-900/80 p-1 rounded-xl border border-slate-800/80 text-[11px]">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-3 py-1 rounded-lg text-white bg-cyan-500/20 font-medium transition-all" data-category="all">All</button>
+                    <button onclick="filterProjects('web')" class="filter-btn px-3 py-1 rounded-lg text-slate-400 hover:text-white font-medium transition-all" data-category="web">Web</button>
+                    <button onclick="filterProjects('backend')" class="filter-btn px-3 py-1 rounded-lg text-slate-400 hover:text-white font-medium transition-all" data-category="backend">Backend</button>
+                    <button onclick="filterProjects('minecraft')" class="filter-btn px-3 py-1 rounded-lg text-slate-400 hover:text-white font-medium transition-all" data-category="minecraft">Minecraft</button>
+                </div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+                
+                <!-- Web Apps Card -->
+                <div class="project-card glass-card rounded-xl p-4 space-y-3 glow-hover flex flex-col justify-between" data-category="web">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">Web App</span>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Glassmorphic Web Portfolios</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Ultra-sleek responsive dark-themed interfaces built with Tailwind, Express backends, Supabase, and MongoDB database integrations.
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-wrap gap-1 text-[10px] font-mono text-slate-400">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Node.js</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Supabase</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Backend Card -->
+                <div class="project-card glass-card rounded-xl p-4 space-y-3 glow-hover flex flex-col justify-between" data-category="backend">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs font-bold">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">Backend</span>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Desktop Automation & Scripts</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Python and Node.js toolkits for batch file processing, web scraping, custom REST API endpoints, and webhook automation scripts.
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-wrap gap-1 text-[10px] font-mono text-slate-400">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Python</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Express</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Minecraft Card -->
+                <div class="project-card glass-card rounded-xl p-4 space-y-3 glow-hover flex flex-col justify-between" data-category="minecraft">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Server</span>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Minecraft Plugins (Java/Kotlin)</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Custom high-performance Paper API server plugins, custom game mechanics, Skript scripts, and economy integrations.
+                        </p>
+                    </div>
+                    <div class="pt-2 flex flex-wrap gap-1 text-[10px] font-mono text-slate-400">
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Java</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Paper API</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Skript</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Clean minimal contact bar (No form box) -->
+        <section id="contact" class="glass-card rounded-2xl p-5 border border-slate-800">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="space-y-1 text-center sm:text-left">
+                    <h2 class="text-base font-bold text-white flex items-center justify-center sm:justify-start gap-2">
+                        <span>Get in Touch</span>
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+                    </h2>
+                    <p class="text-xs text-slate-400">Feel free to reach out directly via Discord for project inquiries.</p>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <button onclick="copyDiscordHandle()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 font-bold text-xs shadow-md hover:scale-[1.02] transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-discord text-base"></i>
+                        <span id="contact-discord-label">Discord: evansergi</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 glass-card bg-slate-900/90 text-white text-xs font-medium px-4 py-2.5 rounded-xl border border-cyan-500/40 shadow-xl opacity-0 translate-y-4 pointer-events-none transition-all duration-300 flex items-center gap-2 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-message">Copied Discord handle!</span>
+    </div>
+
+    <footer class="border-t border-slate-800/80 py-5 text-center text-[11px] text-slate-500 w-full">
+        <p>&copy; 2026 Evan Sergi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const DISCORD_HANDLE = 'evansergi';
+
+        // Copy Discord Username logic
+        function copyDiscordHandle() {
+            const tempInput = document.createElement("input");
+            tempInput.value = DISCORD_HANDLE;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            showToast(`Copied "${DISCORD_HANDLE}" to clipboard!`);
+            
+            // Visual label feedback
+            const navLabel = document.getElementById('nav-discord-label');
+            const heroLabel = document.getElementById('hero-discord-label');
+            const contactLabel = document.getElementById('contact-discord-label');
+
+            if (navLabel) navLabel.textContent = "Copied!";
+            if (heroLabel) heroLabel.textContent = "Copied evansergi!";
+            if (contactLabel) contactLabel.textContent = "Copied evansergi!";
+
+            setTimeout(() => {
+                if (navLabel) navLabel.textContent = DISCORD_HANDLE;
+                if (heroLabel) heroLabel.textContent = `Discord: ${DISCORD_HANDLE}`;
+                if (contactLabel) contactLabel.textContent = `Discord: ${DISCORD_HANDLE}`;
+            }, 2000);
+        }
+
+        // Show Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+
+            toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            }, 2500);
+        }
+
+        // Project Filtering Logic
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.add('active', 'bg-cyan-500/20', 'text-white');
+                    btn.classList.remove('text-slate-400');
+                } else {
+                    btn.classList.remove('active', 'bg-cyan-500/20', 'text-white');
+                    btn.classList.add('text-slate-400');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
